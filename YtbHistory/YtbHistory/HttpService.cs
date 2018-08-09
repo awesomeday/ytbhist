@@ -43,7 +43,7 @@ namespace YtbHistory
                     var name = part.Substring(0, firstEq);
                     var value = part.Substring(firstEq + 1);
 
-                    container.Add(new Cookie(name, value));
+                    container.Add(new Uri("http://www.youtube.com"), new Cookie(name, value));
                 }
             }
 
