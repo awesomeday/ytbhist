@@ -1,0 +1,31 @@
+bin/
+obj/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.dbmdl
+*.DotSettings.user
+*.DotSettings
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+.build/*
+
+#Project files
+[Bb]uild/
+[Aa]rtifacts/
+
+# Rider
+.idea/
+
+*/packages/*
+!*/packages/repositories.config
+
+# Visual Studio 2017 Database Project files
+*.jfm
