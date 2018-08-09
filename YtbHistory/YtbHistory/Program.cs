@@ -59,18 +59,18 @@ namespace YtbHistory
                 {  "session_token", "QUFFLUhqbVd3YzQzVDFVUUdpUlFud1psTHdBMGtMVVpvZ3xBQ3Jtc0ttUkdKSmlsQjFRSDVTbjdrZTdZVG9VZWhKQmNRdFRTbExIamp3NksxYTkwRGtRQ1NlUlEyZEVZbmlTLXYwMWdCTmdpdXZZUUUyamcxWHotSHRoY0tKNW5aTmZzUDZhbVhTX2o2WHZmYVRZcnhXZjdpcE1ORGNVUXlqSUN1bXZGQmFqakg1UEswc1BFX0Y3emRaOVFDMHJ5MzVDanc%3D" }
             });
 
-            cnt.Headers.Add("Origin", "http://www.youtube.com");
-            cnt.Headers.Add("X-YouTube-Page-Label", "youtube.ytfe.desktop_20180806_5_RC2");
-            cnt.Headers.Add("X-YouTube-Variants-Checksum", "3dabe9512fabab7f223b204f575d5316");
-            cnt.Headers.Add("X-YouTube-Page-CL", "207789869");
-            cnt.Headers.Add("X-SPF-Referer", "http://www.youtube.com/feed/history");
-            cnt.Headers.Add("X-YouTube-Utc-Offset", "180");
-            cnt.Headers.Add("X-YouTube-Client-Name", "1");
-            cnt.Headers.Add("X-SPF-Previous", "http://www.youtube.com/feed/history");
-            cnt.Headers.Add("X-YouTube-Client-Version", "2.20180807");
-            cnt.Headers.Add("X-Youtube-Identity-Token", "QUFFLUhqbkhNVkc0NjNOaUJGNm0wOTN4N0o0Rkx6MGZ2d3w=");
-            cnt.Headers.Add("DNT", "1");
-            cnt.Headers.Add("X-Client-Data", "CKa1yQEIhrbJAQiitskBCMG2yQEIqZ3KAQjYncoBCKijygE=");
+            m.Headers.Add("Origin", "http://www.youtube.com");
+            m.Headers.Add("X-YouTube-Page-Label", "youtube.ytfe.desktop_20180806_5_RC2");
+            m.Headers.Add("X-YouTube-Variants-Checksum", "3dabe9512fabab7f223b204f575d5316");
+            m.Headers.Add("X-YouTube-Page-CL", "207789869");
+            m.Headers.Add("X-SPF-Referer", "http://www.youtube.com/feed/history");
+            m.Headers.Add("X-YouTube-Utc-Offset", "180");
+            m.Headers.Add("X-YouTube-Client-Name", "1");
+            m.Headers.Add("X-SPF-Previous", "http://www.youtube.com/feed/history");
+            m.Headers.Add("X-YouTube-Client-Version", "2.20180807");
+            m.Headers.Add("X-Youtube-Identity-Token", "QUFFLUhqbkhNVkc0NjNOaUJGNm0wOTN4N0o0Rkx6MGZ2d3w=");
+            m.Headers.Add("DNT", "1");
+            m.Headers.Add("X-Client-Data", "CKa1yQEIhrbJAQiitskBCMG2yQEIqZ3KAQjYncoBCKijygE=");
 
             m.Content = cnt;
             m.Headers.Add("Referer", "http://www.youtube.com/feed/history");

@@ -47,9 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpRequestParams.cs" />
+    <Compile Include="HttpService.cs" />
+    <Compile Include="IHttpService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RespRoot.cs" />
+    <Compile Include="VideoPageDownloadService.cs" />
+    <Compile Include="YtbVideo.cs" />
+    <Compile Include="YtbVideoPage.cs" />
+    <Compile Include="YtbVideoPageHttpService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
