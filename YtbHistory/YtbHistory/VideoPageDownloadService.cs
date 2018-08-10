@@ -27,8 +27,13 @@ namespace YtbHistory
             firstPageUrl = $"{BaseUrl}/feed/history?pbj=1";
         }
 
-        public async Task<YtbVideoPage> GetPage(string continuation)
+        public async Task<YtbVideoPage> GetPage(string continuation = null)
         {
+            if (continuation == null)
+            {
+                return await GetFirstPage();
+            }
+
             return await httpService.RequestAsync(new HttpRequestParams()
             {
                 Method = HttpMethod.Post,
@@ -39,13 +44,12 @@ namespace YtbHistory
             });
         }
 
-        public async Task<YtbVideoPage> GetPage()
+        private async Task<YtbVideoPage> GetFirstPage()
         {
             return await firstPageHttpService.RequestAsync(new HttpRequestParams()
             {
                 Method = HttpMethod.Get,
                 Url = firstPageUrl,
-                // Data = GetData(),
                 Cookies = GetCookies(),
                 Headers = GetHeaders()
             });

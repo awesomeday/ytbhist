@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace YtbHistory
 {
@@ -15,8 +16,16 @@ namespace YtbHistory
             var authParams = new AuthParams();
             var downloader = new VideoPageDownloadService();
 
-            // var page = await downloader.GetPage("4qmFsgIZEglGRWhpc3RvcnkaDENPMnc1cHZRdXR3Qw%253D%253D");
-            var page = await downloader.GetPage();
+            var continuation = (string)null;
+            var total = 0;
+
+            while(true)
+            {
+                var page = await downloader.GetPage(continuation);
+
+                total += page.Videos.Count();
+                continuation = page.ContinuationToken;
+            }
         }
     }
 }
