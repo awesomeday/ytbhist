@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using YtbHistory.Models;
 
 namespace YtbHistory
@@ -29,15 +31,34 @@ namespace YtbHistory
             var downloader = new YtbVideoPageDownloadService(authParams);
 
             var continuation = (string)null;
+            // var continuation = "4qmFsgIZEglGRWhpc3RvcnkaDENOdkFvLTNLMnJ3Qw%3D%3D";
             var total = 0;
+            var i = 0;
 
             while(true)
             {
                 var page = await downloader.GetPage(continuation);
 
                 total += page.Videos.Count();
+                Console.WriteLine(i++ + " - " + total);
+
                 continuation = page.ContinuationToken;
+
+                SavePage(page);
+
+                if (String.IsNullOrWhiteSpace(continuation))
+                {
+                    break;
+                }
             }
+
+            Console.WriteLine("DONE");
+        }
+
+        private static void SavePage(YtbVideoPage page)
+        {
+            var lines = page.Videos.Select((video) => Newtonsoft.Json.JsonConvert.SerializeObject(video) + ",");
+            File.AppendAllLines("file.txt", lines);
         }
     }
 }

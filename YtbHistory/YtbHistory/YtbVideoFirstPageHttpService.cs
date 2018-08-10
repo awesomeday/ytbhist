@@ -37,7 +37,7 @@ namespace YtbHistory
                 };
             }).ToArray();
 
-            result.ContinuationToken = pageData.response.contents.twoColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents[0].itemSectionRenderer.continuations[0].nextContinuationData.continuation;
+            result.ContinuationToken = pageData.response?.contents?.twoColumnBrowseResultsRenderer?.tabs[0]?.tabRenderer?.content?.sectionListRenderer?.contents[0]?.itemSectionRenderer?.continuations[0]?.nextContinuationData?.continuation;
 
             return result;
         }

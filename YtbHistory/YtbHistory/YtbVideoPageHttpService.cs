@@ -20,7 +20,7 @@ namespace YtbHistory
 
             result.Videos = pageData.response.continuationContents.itemSectionContinuation.contents.Select((video) => {
                 var description = video.videoRenderer?.descriptionSnippet?.simpleText;
-                var id = video.videoRenderer.videoId;
+                var id = video.videoRenderer?.videoId;
                 var thumb = video.videoRenderer?.thumbnail?.thumbnails[0]?.url;
                 var title = video.videoRenderer?.title.simpleText;
                 var channelId = video.videoRenderer?.ownerText?.runs[0]?.navigationEndpoint?.browseEndpoint?.browseId;
@@ -37,7 +37,7 @@ namespace YtbHistory
                 };
             }).ToArray();
 
-            result.ContinuationToken = pageData.response.continuationContents.itemSectionContinuation.continuations[0].nextContinuationData.continuation;
+            result.ContinuationToken = pageData.response?.continuationContents?.itemSectionContinuation?.continuations?[0]?.nextContinuationData?.continuation;
 
             return result;
         }
