@@ -15,7 +15,8 @@ namespace YtbHistory
             var authParams = new AuthParams();
             var downloader = new VideoPageDownloadService();
 
-            var page = await downloader.GetPage("4qmFsgIZEglGRWhpc3RvcnkaDENPMnc1cHZRdXR3Qw%253D%253D");
+            // var page = await downloader.GetPage("4qmFsgIZEglGRWhpc3RvcnkaDENPMnc1cHZRdXR3Qw%253D%253D");
+            var page = await downloader.GetPage();
         }
     }
 }

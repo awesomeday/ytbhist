@@ -21,23 +21,39 @@ namespace YtbHistory
         public List<ThumbnailInfo> thumbnails { get; set; }
     }
 
-    class WatchEndpoint
+    class BrowseEndpoint
     {
-        public string videoId { get; set; }
+        public string browseId { get; set; }
     }
 
     class NavigationEndpoint
     {
-        public WatchEndpoint watchEndpoint { get; set; }
+        public BrowseEndpoint browseEndpoint { get; set; }
+    }
+
+    class OwnerTextRun
+    {
+        public NavigationEndpoint navigationEndpoint { get; set; }
+
+        public string text { get; set; }
+    }
+
+    class OwnerText
+    {
+        public List<OwnerTextRun> runs { get; set; }
     }
 
     class VideoRenderer
     {
         public SimpleText descriptionSnippet { get; set; }
 
+        public SimpleText title { get; set; }
+
         public Thumbnail thumbnail { get; set; }
 
-        public NavigationEndpoint navigationEndpoint { get; set; }
+        public string videoId { get; set; }
+
+        public OwnerText ownerText { get; set; }
     }
 
     class VideoData
@@ -75,5 +91,58 @@ namespace YtbHistory
     class RespRoot
     {
         public YtbResponse response { get; set; }
+    }
+
+
+
+
+
+
+
+
+
+    class ListRendererContent
+    {
+        public ItemSectionContinuation itemSectionRenderer { get; set; }
+    }
+
+    class SectionListRenderer
+    {
+        public List<ListRendererContent> contents { get; set; }
+    }
+
+    class TabContent
+    {
+        public SectionListRenderer sectionListRenderer { get; set; }
+    }
+
+    class TabRenderer
+    {
+        public TabContent content { get; set; }
+    }
+
+    class FirstPageTab
+    {
+        public TabRenderer tabRenderer { get; set; }
+    }
+
+    class TwoColumnBrowseResultsRenderer
+    {
+        public List<FirstPageTab> tabs { get; set; }
+    }
+
+    class FirstPageContents
+    {
+        public TwoColumnBrowseResultsRenderer twoColumnBrowseResultsRenderer { get; set; }
+    }
+
+    class FirstPageYtbResponse
+    {
+        public FirstPageContents contents { get; set; }
+    }
+
+    class FirstPageResponseRoot
+    {
+        public FirstPageYtbResponse response { get; set; }
     }
 }

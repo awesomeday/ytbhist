@@ -54,7 +54,7 @@ namespace YtbHistory
         {
             var m = new HttpRequestMessage(parameters.Method, new Uri(parameters.Url))
             {
-                Content = new ByteArrayContent(parameters.Data)
+                Content = parameters.Data != null ? new ByteArrayContent(parameters.Data) : null
             };
 
             foreach(var pair in parameters.Headers)

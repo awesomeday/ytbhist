@@ -10,15 +10,21 @@ namespace YtbHistory
     {
         private string BaseUrl { get; } = "https://youtube.com";
         private readonly string urlTemplate;
+        private readonly string firstPageUrl;
 
         private YtbVideoPageHttpService httpService;
+        private YtbVideoFirstPageHttpService firstPageHttpService;
+
         private AuthParams authParams;
 
         public VideoPageDownloadService()
         {
             authParams = new AuthParams();
             httpService = new YtbVideoPageHttpService();
+            firstPageHttpService = new YtbVideoFirstPageHttpService();
+
             urlTemplate = $"{BaseUrl}/browse_ajax?ctoken={{0}}&continuation={{1}}"; // &itct=CCEQybcCIhMI0c6p_Ovf3AIVDV-yCh3J5gtV
+            firstPageUrl = $"{BaseUrl}/feed/history?pbj=1";
         }
 
         public async Task<YtbVideoPage> GetPage(string continuation)
@@ -28,6 +34,18 @@ namespace YtbHistory
                 Method = HttpMethod.Post,
                 Url = GetUrl(continuation),
                 Data = GetData(),
+                Cookies = GetCookies(),
+                Headers = GetHeaders()
+            });
+        }
+
+        public async Task<YtbVideoPage> GetPage()
+        {
+            return await firstPageHttpService.RequestAsync(new HttpRequestParams()
+            {
+                Method = HttpMethod.Get,
+                Url = firstPageUrl,
+                // Data = GetData(),
                 Cookies = GetCookies(),
                 Headers = GetHeaders()
             });

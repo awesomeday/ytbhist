@@ -11,5 +11,7 @@
         public string Thumbnail { get; set; }
 
         public string ChannelId { get; set; }
+
+        public string ChannelName { get; set; }
     }
 }
