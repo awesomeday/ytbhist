@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 
-namespace YtbHistory
+namespace YtbHistory.Models
 {
     class HttpRequestParams
     {

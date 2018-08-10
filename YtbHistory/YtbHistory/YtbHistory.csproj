@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthParams.cs" />
-    <Compile Include="HttpRequestParams.cs" />
+    <Compile Include="Models\AuthParams.cs" />
+    <Compile Include="Models\HttpRequestParams.cs" />
     <Compile Include="HttpService.cs" />
     <Compile Include="IHttpService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RespRoot.cs" />
-    <Compile Include="VideoPageDownloadService.cs" />
-    <Compile Include="YtbVideo.cs" />
+    <Compile Include="Models\RespRoot.cs" />
+    <Compile Include="YtbVideoPageDownloadService.cs" />
+    <Compile Include="Models\YtbVideo.cs" />
     <Compile Include="YtbVideoFirstPageHttpService.cs" />
-    <Compile Include="YtbVideoPage.cs" />
+    <Compile Include="Models\YtbVideoPage.cs" />
     <Compile Include="YtbVideoPageHttpService.cs" />
   </ItemGroup>
   <ItemGroup>

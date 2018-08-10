@@ -1,4 +1,4 @@
-﻿namespace YtbHistory
+﻿namespace YtbHistory.Models
 {
     class YtbVideo
     {

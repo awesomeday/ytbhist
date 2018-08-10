@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using YtbHistory.Models;
 
 namespace YtbHistory
 {
-    class VideoPageDownloadService
+    class YtbVideoPageDownloadService
     {
         private string BaseUrl { get; } = "https://youtube.com";
         private readonly string urlTemplate;
@@ -17,13 +18,14 @@ namespace YtbHistory
 
         private AuthParams authParams;
 
-        public VideoPageDownloadService()
+        public YtbVideoPageDownloadService(AuthParams authParams)
         {
-            authParams = new AuthParams();
+            this.authParams = authParams;
+
             httpService = new YtbVideoPageHttpService();
             firstPageHttpService = new YtbVideoFirstPageHttpService();
 
-            urlTemplate = $"{BaseUrl}/browse_ajax?ctoken={{0}}&continuation={{1}}"; // &itct=CCEQybcCIhMI0c6p_Ovf3AIVDV-yCh3J5gtV
+            urlTemplate = $"{BaseUrl}/browse_ajax?ctoken={{0}}&continuation={{1}}";
             firstPageUrl = $"{BaseUrl}/feed/history?pbj=1";
         }
 

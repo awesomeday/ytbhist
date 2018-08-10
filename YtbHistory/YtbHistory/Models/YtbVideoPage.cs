@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace YtbHistory
+namespace YtbHistory.Models
 {
     class YtbVideoPage
     {
